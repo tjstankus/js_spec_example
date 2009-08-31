@@ -1,0 +1,7 @@
+div.question {
+  margin: 15px 0;
+}
+div.question textarea.further_info {
+  display: block;
+  margin: 10px 0 0 0;
+}
