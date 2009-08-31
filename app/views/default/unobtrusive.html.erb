@@ -1,0 +1,21 @@
+<%- form_tag('/', :id => 'questions') do -%>
+
+  <div class="question">
+    An important question that requires an answer.
+    <%= radio_button_tag('answer_1', 'yes', false, :class => 'answer') %> Yes
+    <%= radio_button_tag('answer_1', 'no', false, :class => 'answer') %> No
+  </div>
+
+  <div class="question">
+    An important question that requires an answer and perhaps further info.
+    <%= radio_button_tag('answer_2', 'yes', false,
+            :class => 'answer requires_further_info_on') %> Yes
+    <%= radio_button_tag('answer_2', 'no', false,
+            :class => 'answer requires_further_info_off') %> No
+    <%= text_area_tag('answer_2_further_info', nil, :size => '60x5',
+            :class => 'further_info', :style => 'display:none;') %>
+  </div>
+
+  <%= submit_tag('Continue', {:disabled => true, :class => 'continue'}) %>
+
+<%- end -%>
