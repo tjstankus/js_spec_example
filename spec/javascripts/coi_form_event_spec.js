@@ -16,10 +16,10 @@
 // 
 // 
 require("spec_helper.js");
-require("../../public/javascripts/application.js");
+require("../../public/javascripts/coi_form_event.js");
 
 Screw.Unit(function(){
-  describe("COI form", function(){
+  describe("CoiFormEvent", function(){
     
     it('displays further info entry field', function() {
       fixture($('<form id="questions"/>')
@@ -29,7 +29,7 @@ Screw.Unit(function(){
           .append($('<textarea id="answer_1_further_info" rows="10" cols="10" name="answer_1_further_info" class="further_info" style="display:none;"/>'))));
           
       expect($('.further_info').is(':visible')).to(equal, false);
-      showFurtherInfo($('.requires_further_info_on'));
+      CoiFormEvent.showFurtherInfo($('.requires_further_info_on'));
       expect($('.further_info').is(':visible')).to(equal, true);
     });
     
@@ -41,7 +41,7 @@ Screw.Unit(function(){
           .append($('<textarea id="answer_1_further_info" rows="10" cols="10" name="answer_1_further_info" class="further_info"/>'))));
       
       expect($('.further_info').is(':visible')).to(equal, true);
-      hideFurtherInfo($('.requires_further_info_off'));
+      CoiFormEvent.hideFurtherInfo($('.requires_further_info_off'));
       expect($('.further_info').is(':visible')).to(equal, false);
     });
   });
